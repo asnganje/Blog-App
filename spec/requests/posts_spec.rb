@@ -5,7 +5,7 @@ RSpec.describe 'Posts', type: :request do
     @user = User.create(
       name: 'Abdul',
       photo: 'https://unsplash.com/photos/4ct0iDMOjuc',
-      bio: 'I am a software developer',
+      bio: 'I am a backend developer',
       posts_counter: 2
     )
 
