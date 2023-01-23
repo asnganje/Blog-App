@@ -83,6 +83,14 @@ You can deploy this project using:
 - GitHub: [@Nganje](https://github.com/asnganje)
 - LinkedIn: [@Nganje](https://www.linkedin.com/in/abdulrahman-nganje-a6436935/)
 
+## 🔭 Future Features <a name="future-features"></a>
+
+> Describe 1 - 3 features you will add to the project.
+
+- [ ] **Add Admin Section**
+- [ ] **Edit Post**
+- [ ] **Delete Post**
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
