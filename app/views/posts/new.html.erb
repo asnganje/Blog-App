@@ -1,17 +1,14 @@
 <section>
+
     <p>Create a new Post:</p>
-    <%= form_with model: @post, url: user_posts_path do |form| %>
-        <div>
-        <%= form.label :title %>
-        <%= form.text_field :title %>
-        </div>
-        <div>
-        <%= form.label :text %>
-        <%= form.text_area :text %>
-        </div>
-        <br/><br/>
-        <div>
-        <%= form.submit 'Submit' %>
-        </div>
-    <% end %>
+    <%= form_with model: Post, url: user_posts_url, class: "form" do |f|  %>
+   <%= f.text_field :title, placeholder:"Title", id:"post_title", autofocus: true %>
+  
+  <div>
+   <%= f.text_area :text, placeholder:"Write your content...", id:"post_text"%>
+  </div>
+  <div id="buttons_div">
+   <%= f.submit "Save your post" %>
+  </div>
+<% end %>
 </section>
