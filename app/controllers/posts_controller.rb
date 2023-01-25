@@ -27,20 +27,6 @@ class PostsController < ApplicationController
     end
   end
 
-  # def create
-  # @post = Post.new(post_params)
-  # @post.author = current_user
-  # if @post.save
-  # flash[:success] = 'Post created!'
-  # redirect_back_or_to user_post_path(current_user, @post)
-  # redirect_to user_post_path(current_user, @post)
-  # else
-  # flash.now[:error] = 'Post not created!'
-  # render :new, status: :unprocessable_entity
-  # render :new
-  # end
-  # end
-
   private
 
   def post_params

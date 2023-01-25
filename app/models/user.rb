@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  # has_many :posts
   has_many :posts, foreign_key: :author_id
   has_many :comments, foreign_key: :author_id
   has_many :likes, foreign_key: :author_id
@@ -9,6 +8,5 @@ class User < ApplicationRecord
 
   def three_recent_posts
     posts.order('created_at DESC').first(3)
-    # posts.order(created_at: :desc).limit(3)
   end
 end
