@@ -1,4 +1,4 @@
-<%= form_with :model Comment, url: user_post_comments_path(@post author, @post) do |form| %>
+<%= form_with model: Comment, url: user_post_comments_path(@post.author, @post) do |form| %>
     <div>
         <%= form.label 'Add Comment' %> <br/><br/>
         <%= form.text_area :text, placeholder: 'Add Comment', row: 20, required: true %> <br/>

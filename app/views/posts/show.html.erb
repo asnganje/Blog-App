@@ -4,6 +4,7 @@
         <p><%= @post.text  %></p>
         <span class = 'comment-likes'>
             Comments: <%= @post.comments_counter || 0 %>
+            <%= render 'comments/add_comment' %>
             Likes: <%= @post.likes_counter || 0 %>
             <%= render 'likes/add_like' %>            
     </div>
@@ -12,7 +13,7 @@
             <p>No comments yet</p>
         <% else %>
             <% @post.comments.each do |comment| %>
-                <li><%= comment.author %> : <%= comment.text %></li>
+                <li><%= comment.author.name %> : <%= comment.text %></li>
             <%end%>
         <%end%>
     </ul>
