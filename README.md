@@ -80,6 +80,13 @@ You can deploy this project using:
 
 
 ## 👥 Authors
+**Jonathan Kayizzi**
+- GitHub: [@JonahKayizzi](https://github.com/JonahKayizzi)
+- Twitter: [@JonahKayizzi](https://twitter.com/JonahKayizzi)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/jonathan-kayizzi/)
+
+
+**Abdulrahman Nganje**
 - GitHub: [@Nganje](https://github.com/asnganje)
 - LinkedIn: [@Nganje](https://www.linkedin.com/in/abdulrahman-nganje-a6436935/)
 

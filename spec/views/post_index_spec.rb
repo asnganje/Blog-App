@@ -3,27 +3,27 @@ require 'rails_helper'
 RSpec.describe 'Post Index', type: :feature do
   before(:each) do
     @user1 = User.create(
-        name: 'Abdul',
-        bio: 'Aspiring FullStack Dev',
-        photo: 'https://unsplash.com/photos/NDCy2-9JhUs',
-        posts_counter: 2
+      name: 'Abdul',
+      bio: 'Aspiring FullStack Dev',
+      photo: 'https://unsplash.com/photos/NDCy2-9JhUs',
+      posts_counter: 2
     )
 
     @post1 = Post.create(
-        author: @user1,
-        title: 'Test',
-        text: 'First Post',
-        comments_counter: 1,
-        likes_counter: 2
-      )
+      author: @user1,
+      title: 'Test',
+      text: 'First Post',
+      comments_counter: 1,
+      likes_counter: 2
+    )
 
-      @post2 = Post.create(
-        author: @user1,
-        title: 'Working?',
-        text: 'Second post',
-        comments_counter: 2,
-        likes_counter: 2
-      )
+    @post2 = Post.create(
+      author: @user1,
+      title: 'Working?',
+      text: 'Second post',
+      comments_counter: 2,
+      likes_counter: 2
+    )
 
     Comment.create(post: @post1, author: @user1, text: 'You like it?')
     Comment.create(post: @post1, author: @user1, text: 'Keep it up!')
@@ -51,7 +51,7 @@ RSpec.describe 'Post Index', type: :feature do
 
     it 'displays total posts by the user has written' do
       visit user_posts_path(@user1)
-      expect(page).to have_content('4') #comments have also been considered as posts
+      expect(page).to have_content('4') # comments have also been considered as posts
     end
 
     it 'can see some of the post body' do

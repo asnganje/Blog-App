@@ -8,7 +8,7 @@
 <div class='user-posts'>
     <% @posts.each do |post| %>
     <div class='listed-posts'>
-    <h4><%= link_to post.title, user_post_path(post) %></h4>
+    <h4><%= link_to post.title, user_post_path(post.author, post.id) %></h4>
     <p><%= post.text %></p>
 
     <span class = 'comment-likes'>

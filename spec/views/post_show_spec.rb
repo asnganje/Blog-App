@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe 'Post Show', type: :feature do
   before(:each) do
     @user1 = User.create(
-        name: 'Abdul',
-        bio: 'Aspiring FullStack Dev',
-        photo: 'https://unsplash.com/photos/NDCy2-9JhUs',
-        posts_counter: 2
+      name: 'Abdul',
+      bio: 'Aspiring FullStack Dev',
+      photo: 'https://unsplash.com/photos/NDCy2-9JhUs',
+      posts_counter: 2
     )
 
     @post1 = Post.create(
@@ -24,7 +24,7 @@ RSpec.describe 'Post Show', type: :feature do
       comments_counter: 1,
       likes_counter: 2
     )
-    
+
     @comment1 = Comment.create(post: @post1, author: @user1, text: 'Is it working?')
     @comment2 = Comment.create(post: @post1, author: @user1, text: 'Hey')
     Comment.create(post: @post2, author: @user1, text: 'How are you?')
@@ -62,7 +62,7 @@ RSpec.describe 'Post Show', type: :feature do
     it 'shows username and comment of each commentor' do
       visit user_post_path(@user1, @post1)
       expect(page).to have_content(@comment1.author.name)
-      expect(page).to have_content(@comment1.text) 
+      expect(page).to have_content(@comment1.text)
       expect(page).to have_content(@comment2.author.name)
       expect(page).to have_content(@comment2.text)
     end

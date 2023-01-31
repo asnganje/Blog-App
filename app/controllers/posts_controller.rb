@@ -1,17 +1,17 @@
 class PostsController < ApplicationController
   # GET /posts or /posts.json
   def index
-    #@user = User.find(params[:user_id])
-    @posts = Post.includes(:author, comments:[:author]).where(author_id: params[:user_id])
+    # @user = User.find(params[:user_id])
+    @posts = Post.includes(:author, comments: [:author]).where(author_id: params[:user_id])
     @first_post = @posts[0]
   end
 
   # GET /posts/1 or /posts/1.json
   def show
-    #@user = User.find(params[:user_id])
-    #@post = Post.find(params[:id])
+    # @user = User.find(params[:user_id])
+    # @post = Post.find(params[:id])
     # @post = Post.includes(:user_id, :comments).find(params[:id])
-    @post = Post.includes(:author, comments:[:author]).where(author_id: params[:user_id]).find(params[:id])
+    @post = Post.includes(:author, comments: [:author]).where(author_id: params[:user_id]).find(params[:id])
   end
 
   def new
