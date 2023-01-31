@@ -21,7 +21,7 @@
          <p>No comments yet</p>
          <% else %>
             <% post.five_recent_comments.each do |comment| %> 
-                <li><%= comment.author %> : <%= comment.text %></li>
+                <li><%= comment.author.name %> : <%= comment.text %></li>
                 <% end %>
         <% end %>
     </ul>
