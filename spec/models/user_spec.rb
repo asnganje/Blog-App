@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   before(:all) do
     @user = User.new(name: 'Abdul', photo: 'https://unsplash.com/photos/4ct0iDMOjuc', bio: 'Teacher from Kenya.',
-                     posts_counter: 1)
+                    posts_counter: 1)
   end
 
   context 'validations tests' do
