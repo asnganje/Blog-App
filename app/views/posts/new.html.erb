@@ -1,6 +1,6 @@
-<section>
+<section class="container">
 
-    <p>Create a new Post:</p>
+    <p class="post-title">Create a new Post:</p>
     <%= form_with model: Post, url: user_posts_url, class: "form" do |f|  %>
    <%= f.text_field :title, placeholder:"Title", id:"post_title", autofocus: true %>
   

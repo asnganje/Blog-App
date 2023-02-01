@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # devise_for :views
+  devise_for :users
   resources :users, only: [:index, :show] do
     resources :posts do
       resources :comments, only: [:create, :destroy]
