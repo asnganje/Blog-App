@@ -16,7 +16,7 @@
 <div class = 'posts'>
     <% @user.three_recent_posts.each do |post| %>
         <div class = 'myposts'>
-            <h4><% link_to post.title, user_post_path(@user, post)  %></h4>
+            <h4><%= link_to post.title, user_post_path(@user, post)  %></h4>
             <p><%= post.text %></p>
             <span class = 'comments-likes'>
                 Comments: <%= post.comments_counter || 0 %>
