@@ -24,15 +24,15 @@ class PostsController < ApplicationController
       render :new
     end
   end
-  
+
   def destroy
     @post = Post.find(params[:id])
     @post.author.decrement!(:posts_counter)
     @post.destroy
 
-    redirect_to root_path, status: :see_other  
+    redirect_to root_path, status: :see_other
   end
-    
+
   private
 
   def post_params
