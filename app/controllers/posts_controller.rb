@@ -1,10 +1,13 @@
 class PostsController < ApplicationController
+  load_resource through: :current_user
   def index
     @user = User.find(params[:user_id])
   end
 
   def show
-    @post = Post.includes(:comments, :likes).find(params[:id])
+    # @post = Post.includes(:comments, :likes).find(params[:id])
+    @post = Post.find(params[:id])
+    @user = current_user
   end
 
   def new
@@ -21,6 +24,14 @@ class PostsController < ApplicationController
       flash.now[:error] = 'Error message: Post was not created !'
       render :new
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.author.decrement!(:posts_counter)
+    @post.destroy
+
+    redirect_to root_path, status: :see_other
   end
 
   private

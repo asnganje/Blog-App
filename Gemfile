@@ -6,6 +6,13 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 
 # Add Devise for authentication
 gem 'devise'
+
+# Add authorization gem
+
+gem 'cancancan', '~> 1.9'
+
+gem 'load_and_authorize_resource'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4'
 
