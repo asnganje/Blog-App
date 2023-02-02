@@ -16,9 +16,9 @@
 
 > Describe between 1-3 key features of the application.
 
-- **[Adding Comments]**
-- **[Adding Posts]**
-- **[Liking a Post]**
+- **[Register a User]**
+- **[Ask for confirmation email]**
+- **[Reset a Password]**
 
 
 <!-- LIVE DEMO -->

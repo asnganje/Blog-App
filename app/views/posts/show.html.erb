@@ -1,6 +1,6 @@
 <section>
     <div class = 'listed-posts'>
-        <h4><%= @post.title%> by <%= @post.author.name%></h4>
+        <h4><%= @post.title%> by <%= @post.author%></h4>
         <p><%= @post.text  %></p>
         <span class = 'comment-likes'>
             Comments: <%= @post.comments_counter || 0 %>

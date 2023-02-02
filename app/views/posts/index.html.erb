@@ -1,30 +1,33 @@
 <section>
-<div class = 'the-user'>
-    <div class = 'user-activity'>
-        <h2><%= @first_post.author.name %></h2>
-        <p>Number of posts: <%= @first_post.author.posts_counter %></p>
+  <div class='single-user'>
+    <div class='user-photo'>
+      <img src='<%= @user.photo %>' alt='<%= @user.name %> thumbnail' />
     </div>
-</div>
-<div class='user-posts'>
-    <% @posts.each do |post| %>
-    <div class='listed-posts'>
-    <h4><%= link_to post.title, user_post_path(post.author, post.id) %></h4>
-    <p><%= post.text %></p>
-
-    <span class = 'comment-likes'>
-        Comments: <%= post.comments_counter || 0 %>
-        Likes: <%= post.likes_counter || 0 %>
-    </span>
+    <div class='user-name'>
+      <h2><%= @user.name %></h2>
+      <p>Number of Posts: <%= @user.posts_counter %></p>
     </div>
-    <ul class = 'comments-info'>
-       <% if post.five_recent_comments.length == 0 %>
-         <p>No comments yet</p>
-         <% else %>
-            <% post.comments.each do |comment| %> 
-                <li><%= comment.author.name %> : <%= comment.text %></li>
-                <% end %>
+  </div>
+  <h4><%= link_to 'Add new Post', new_user_post_path %></h4>
+  <div class='user-posts'>
+    <% @user.posts.each do |post| %>
+      <div class='list-posts'>
+        <h5><%= link_to post.title, user_post_path(@user, post) %></h5>
+        <p><%= post.text %></p>
+        <span class='like-comment'>
+          Comments: <%= post.comments_counter || 0 %>, 
+          Likes: <%= post.likes_counter || 0 %> 
+        </span>
+      </div>
+      <ul class='post-comment'>
+        <% if post.five_recent_comments.length == 0 %>
+          <p>No comments added!</p>
+        <% else %>
+          <% post.five_recent_comments.each do |comment| %>
+            <li><%= comment.author.name %>: <%= comment.text %></li>
+          <% end %>
         <% end %>
-    </ul>
+      </ul>
     <% end %>
-</div>  
+  </div>
 </section>
