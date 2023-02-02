@@ -11,6 +11,8 @@ gem 'devise'
 
 gem 'cancancan', '~> 1.9'
 
+gem 'load_and_authorize_resource'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4'
 
