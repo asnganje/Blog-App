@@ -4,7 +4,9 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.includes(:comments, :likes).find(params[:id])
+    # @post = Post.includes(:comments, :likes).find(params[:id])
+    @post = Post.find(params[:id])
+    @user = current_user
   end
 
   def new
@@ -22,7 +24,9 @@ class PostsController < ApplicationController
       render :new
     end
   end
+  
 
+  
   private
 
   def post_params

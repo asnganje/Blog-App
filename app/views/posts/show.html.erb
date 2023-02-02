@@ -1,6 +1,6 @@
 <section>
     <div class = 'listed-posts'>
-        <h4><%= @post.title%> by <%= @post.author%></h4>
+        <h4><%= @post.title%> by <%= @post.author.name%></h4>
         <p><%= @post.text  %></p>
         <span class = 'comment-likes'>
             Comments: <%= @post.comments_counter || 0 %>
@@ -8,12 +8,20 @@
             Likes: <%= @post.likes_counter || 0 %>
             <%= render 'likes/add_like' %>            
     </div>
+        <%# delete a post %>
+        <% if can? :destroy , @post %>
+        <%= button_to 'Delete Post', user_post_path(@user, @post), method: :delete, class: "btn btn-danger mx-3" %>
+        <%end%>    
+
     <ul class = 'comments-info'>
         <% if @post.comments.length == 0 %>
             <p>No comments yet</p>
         <% else %>
             <% @post.comments.each do |comment| %>
                 <li><%= comment.author.name %> : <%= comment.text %></li>
+            <% if can? :destroy , @post %>
+            <%= button_to 'Delete comment', user_post_comment_path(@user , @post , comment), method: :delete, class: "btn btn-dark" %>
+            <%end%>
             <%end%>
         <%end%>
     </ul>

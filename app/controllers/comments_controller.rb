@@ -8,11 +8,19 @@ class CommentsController < ApplicationController
     @comment.post_id = params[:post_id]
 
     if @comment.save
-      flash[:success] = 'Comment created!'
       redirect_to user_post_path(current_user, @comment.post)
     else
       render :create
     end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @post = Post.find(@comment.post_id)
+    @post.decrement!(:comments_counter)
+    @comment.destroy
+
+    redirect_to root_path, status: :see_other
   end
 
   private
